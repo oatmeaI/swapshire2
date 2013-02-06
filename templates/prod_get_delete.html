@@ -1,0 +1,12 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - Delete {{ obj.name }}</title>
+{% endblock %}
+
+{% block content %}
+are you sure you want to delete {{ obj.name }}?
+<form action="/product/d/{{ obj.key.name }}" method="post">
+	<input class="btn" type="submit" value="Yes">
+</form> <a class="btn" href="/user?mode=r&obj_key={{ obj.key }}">No</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - Create Profile</title>
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-info alert-block">
+	<h4>It looks like this is your first time on Swapshire!</h4>
+	Before you can get started buying, selling and swapping, you need to enter some basic info to identify yourself to fellow users.
+</div>
+
+<form class="form-horizontal" action="/user/u/{{ obj_key }}" method="POST">
+  <div class="control-group">
+    <div class="controls">
+      <input type="text" name="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input type="text" name="blurb" placeholder="One sentence about yourself"><span class="help-inline">(Optional)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input type="text" name="pronouns" placeholder="Preferred gender pronouns"><span class="help-inline">(Optional)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">All Done!</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - List Item</title>
+{% endblock %}
+
+{% block content %}
+<h4>List An Item</h4>
+
+
+<form class="form-horizontal" action="/product/c" method="POST">
+  <div class="control-group">
+    <div class="controls">
+     <input type="text" name="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input class="validate" type="text" name="blurb" placeholder="Description">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls input-append input-prepend">
+      <span class="add-on">$</span>
+    	<input class="input-mini validate" type="text"  onkeypress="return isNumberKey(event)" name="price" placeholder="Price">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <select name="category">
+        {% for category in categories %}
+        <option>{{ category }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div id="hidden-inputs">
+    <input type="hidden" name="user" value="{{ session.user_key }}">
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary" id="submit">All Done!</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

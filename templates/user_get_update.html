@@ -1,0 +1,37 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - Edit Profile</title>
+{% endblock %}
+
+{% block content %}
+{% if first_time %}
+<div class="alert alert-info alert-block">
+	<h4>It looks like this is your first time on Swapshire!</h4>
+	Before you can get started buying, selling and swapping, you need to enter some basic info to identify yourself to fellow users.
+</div>
+{% endif %}
+
+<form class="form-horizontal" action="/user/u/{{ obj_key }}" method="POST">
+  <div class="control-group">
+    <div class="controls">
+      <input type="text" name="name" placeholder="Name" {% if obj.name %}value="{{ obj.name }}"{% endif %}>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input type="text" name="blurb" placeholder="One sentence about yourself" {% if obj.blurb %}value="{{ obj.blurb }}"{% endif %}><span class="help-inline">(Optional)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input type="text" name="pronouns" placeholder="Preferred gender pronouns" {% if obj.pronouns %}value="{{ obj.pronouns }}"{% endif %}><span class="help-inline">(Optional)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">All Done!</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

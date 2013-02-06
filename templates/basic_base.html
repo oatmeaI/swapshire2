@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/base.css" rel="stylesheet">
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://login.persona.org/include.js"></script>
+	<script src="/static/js/base.js"></script>
+	
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+	<input type="hidden" id="user-email" name="user-email" value="{{ session.email }}"> <!-- The BrowserID JS uses this. -->
+	<div class="container-fluid">
+		{% include "basic_header.html" %}
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+
+		{% include "basic_footer.html" %}
+	</div>
+</body>
+</html>

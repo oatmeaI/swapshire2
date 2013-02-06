@@ -1,0 +1,54 @@
+body {
+	background-color: #eee;
+}
+.item {
+	height: 300px;
+}
+#logo {
+	height: 120px;
+}
+#name {
+	position: relative;
+	top: 3px;
+}
+#content {
+	background-color: #FFFFFF;
+	padding: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.marg-left {
+	margin-left: 10px;
+} 
+
+#home-carousel {
+	height: 200px;
+}
+
+#home-carousel img {
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Profile Stuff */
+
+#edit {
+	float: right;
+	position: relative;
+	top: -40px;
+	font-size: 10px;
+}
+
+#edit a {
+	text-decoration: none !important;
+}
+
+#email {
+	float: left;
+	font-style: italic;
+	font-size: 12px;
+	position: relative;
+	top: -15px;
+}

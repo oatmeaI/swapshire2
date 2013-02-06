@@ -1,0 +1,8 @@
+<html>
+<body>
+are you sure you want to delete {{ obj.name }}?
+<form action="/user?mode=d&obj_key={{ obj.key }}" method="post">
+	<input type="submit" value="Yes">
+</form> <a href="/user?mode=r&obj_key={{ obj.key }}">No</a>
+</body>
+</html>

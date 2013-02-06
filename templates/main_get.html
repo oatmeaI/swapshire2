@@ -1,0 +1,30 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Welcome to Swapshire!</title>
+{% endblock %}
+
+{% block content %}
+<div id="home-carousel" class="carousel slide">
+	<!-- Carousel items  CHANGE THIS TO BE DYNAMIC -->
+	<div class="carousel-inner">
+		<div class="active item"><img src="static/images/product1.jpeg"></div>
+		<div class="item"><img src="static/images/product2.jpeg"></div>
+		<div class="item"><img src="static/images/product3.jpeg"></div>
+	</div>
+</div>
+<h2>Welcome to Swapshire!</h2>
+<p class="lead">Swapshire is <em>the</em> place to buy, sell and swap goods and services at Hampshire College.</p>
+
+<script>
+	$('#home-carousel').carousel({
+		interval: 5000
+	})
+
+	$('#login').popover({
+		trigger: 'hover',
+		title: 'We use Mozilla\'s <strong>Persona</strong>',
+		content: 'Please use your <strong>Hampshire College</strong> email address.'
+	})
+</script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - Edit "{{ obj.name }}"</title>
+{% endblock %}
+
+{% block content %}
+<h4>Edit "{{ obj.name }}"</h4>
+
+
+<form class="form-horizontal" action="/product/u/{{ obj.key.name }}" method="POST">
+  <div class="control-group">
+    <div class="controls">
+     <input type="text" name="name" placeholder="Name" value="{{ obj.name }}">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    	<input type="text" name="blurb" placeholder="Description" value="{{ obj.blurb }}">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls input-append input-prepend">
+      <span class="add-on">$</span>
+    	<input class="input-mini" type="text"  onkeypress="return isNumberKey(event)" name="price" placeholder="Price" value="{{ obj.price }}">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <select name="category">
+        {% for category in categories %}
+        <option {% if category == obj.category %}selected="selected"{% endif %} value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div id="hidden-inputs">
+    <input type="hidden" name="user" value="{{ session.user_key }}">
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">All Done!</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

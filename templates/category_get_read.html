@@ -1,0 +1,15 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - Browse {{ category }}</title>
+{% endblock %}
+
+{% block content %}
+Products:<br />
+{% for product in products %}
+ - <a href="/product/r/{{ product.key.name }}">{{ product.name }}</a><br />
+{% endfor %}
+
+<a href="/category/{{ category }}?offset={{ offset|add:"-limit" }}">Prev Page</a>
+<a href="/category/{{ category }}?offset={{ offset|add:limit }}">Next Page</a>
+{% endblock %}

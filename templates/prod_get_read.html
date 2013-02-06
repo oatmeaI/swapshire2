@@ -1,0 +1,18 @@
+{% extends "basic_base.html" %}
+
+{% block head %}
+<title>Swapshire - {{ obj.name }}</title>
+{% endblock %}
+
+{% block content %}
+<h2>{{ obj.name }}</h2>
+{{ obj.blurb }}
+<br />
+{% if logged_in %}
+{{ obj.user.email }}
+{% endif %}
+{% if session.user_key == obj.user.key.name %}
+<a href="/product/d/{{ obj.key.name }}">Delete</a>
+<a href="/product/u/{{ obj.key.name }}">Edit</a>
+{% endif %}
+{% endblock %}
